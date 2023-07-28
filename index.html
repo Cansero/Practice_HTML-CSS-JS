@@ -19,12 +19,17 @@
         <form action="#" method="get">
             <div class="itemform">
                 <label for="nick">Enter your nick:</label>
+                <input type="text" name="nick" id="nicka" value="@" readonly>
                 <input type="text" name="nick" id="nick">
+            </div>
+            <div id="itemform">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" value="yo@iam.es">
             </div>
             <div class="itemform">
                 <label for="size">Game size</label>
                 <select name="size" id="size">
-                    <option value="">--Select a size--</option>
+                    <option value="0">--Select a size--</option>
                     <option value="1">4X4</option>
                     <option value="2">5X5</option>
                     <option value="3">6X6</option>
@@ -38,5 +43,6 @@
     <footer>
         <p>Curso FrontEnd HTML, CSS y JS</p>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>
