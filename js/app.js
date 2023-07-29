@@ -1,9 +1,18 @@
-const inputnick = document.getElementById('nick')
+const nick = document.getElementById('nick');
+const size = document.getElementById('size');
+const forminput = document.getElementById('forminput');
+const error = document.getElementById('error');
 
-console.log(inputnick.value)
-inputnick.value = 'lol'
-console.log(inputnick.value)
+function formtest(event) {
+    if (nick.value.length === 0) {
+        event.preventDefault();
+        error.innerText = 'NO NICK NAME';
+        nick.focus();
+    } else if (size.value === '0') {
+        event.preventDefault();
+        error.innerText = 'NO SIZE SELECTED';
+        size.focus();
+    }
+}
 
-const select = document.getElementById('size')
-
-console.log(select.options[select.selectedIndex].text)
+forminput.addEventListener('submit', formtest);
