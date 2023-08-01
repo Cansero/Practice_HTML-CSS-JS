@@ -3,6 +3,11 @@ const size = document.getElementById('size');
 const forminput = document.getElementById('forminput');
 const error = document.getElementById('error');
 
+if (getdata('error')) {
+    error.innerText = getdata('error')
+    sessionStorage.removeItem('error')
+}
+
 function formtest(event) {
     if (nick.value.length === 0) {
         event.preventDefault();
@@ -13,6 +18,8 @@ function formtest(event) {
         error.innerText = 'NO SIZE SELECTED';
         size.focus();
     }
+    setdata(nick.value, 'nick');
+    savehistory(nick.value);
 }
 
 forminput.addEventListener('submit', formtest);
