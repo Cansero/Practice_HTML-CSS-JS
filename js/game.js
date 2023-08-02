@@ -6,6 +6,8 @@ let nick = document.getElementById('nick');
 let avatar = document.getElementById('avatar');
 let game = document.getElementById('game');
 
+let pressed = false;
+
 if (usernick === null) {
     setdata('NO PREVIOUS SESSION SAVED', 'error');
     window.location = 'index.html'
@@ -29,7 +31,31 @@ function makepanel() {
     game.innerHTML = items;
 }
 
+function markdot(event) {
+    let itemcolor = event.target.classList[1];
+    let container = event.target.parentElement;
+    pressed = true;
+    container.classList.add(itemcolor);
+}
+
+function followup(event) {
+     if (pressed) {
+         let itemcolor = event.target.classList[1];
+         let container = event.target.parentElement;
+         container.classList.add(itemcolor);
+     }
+}
+
+function gameEvents() {
+    const items = document.getElementsByClassName('item');
+    for (let item of items) {
+        item.addEventListener('mousedown', markdot)
+        item.addEventListener('mouseover', followup);
+    }
+}
+
 nick.value = usernick;
 avatar.src = avatarsrc;
 
 makepanel();
+gameEvents();
