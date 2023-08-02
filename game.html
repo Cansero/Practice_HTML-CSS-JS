@@ -2,10 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>game</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterdots</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylegame.css">
 </head>
 <body>
-    <h1>todavia no hay nada xdxdxd</h1>
+    <main>
+        <div id="gamecontainer">
+            <div id="game">
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+                <div class="containeritem">
+                    <div class="item"></div>
+                </div>
+            </div>
+            <div id="gametitle">
+                <p>MASTERDOTS</p>
+            </div>
+        </div>
+        <div id="usercontainer">
+            <form action="juego.html" id="form">
+                <div class="itemform">
+                    <img src="img/avatars/avatar1.jpg" alt="avatar" id="avatar">
+                    <input type="text" id="nick" value="nick" readonly>
+                </div>
+                <div class="itemform">
+                    <label for="score"></label>
+                    <input type="text" id="score" value="0" class="gameinput" readonly>
+                </div>
+                <div class="itemform">
+                    <label for="tmpo">Time left:</label>
+                    <input type="text" id="tmpo" value="30" class="gameinput" readonly>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Curso FrontEnd HTML, CSS y JS</p>
+    </footer>
     <script src="js/userdata.js"></script>
     <script src="js/game.js"></script>
 </body>
