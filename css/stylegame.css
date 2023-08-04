@@ -64,15 +64,19 @@ img{
 }
 .red{
     background-color: #fd0c49;
+    transition: background-color 0.3s;
 }
 .green{
     background-color: #7ac943;
+    transition: background-color 0.3s;
 }
 #gamecontainer{
     width: 500px;
     margin-right: 10px;
 }
 #game{
+    position: absolute;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -84,6 +88,32 @@ img{
     border: 1px solid #ced4da;
     border-radius: 5px 5px 0 0;
 }
+.gameovercolor{
+    background-color: #263238;
+    transition: background-color 0.4s;
+}
+#gameover{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 5px 5px 0 0;
+    width: 500px;
+    height: 400px;
+}
+#gameover button{
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    width: 200px;
+}
 #gametitle{
     width: 500px;
     background-color: #263238;
@@ -93,6 +123,7 @@ img{
     padding-bottom: 10px;
     color: #fff;
     text-align: center;
+    margin-top: 400px;
 }
 #usercontainer{
     width: 290px;

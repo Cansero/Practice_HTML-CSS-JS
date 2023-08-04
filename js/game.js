@@ -100,10 +100,26 @@ function gameEvents() {
     document.addEventListener("mouseup", finished);
 }
 
+function removegameEvents() {
+    const items = document.getElementsByClassName('item');
+
+    for (let item of items) {
+        item.removeEventListener('mousedown', markdot)
+        item.removeEventListener('mouseover', followup);
+    }
+
+    document.removeEventListener("mouseup", finished);
+}
+
 function countdown() {
     time.value = parseInt(time.value) - 1;
     if (time.value === '0') {
         clearInterval(intervalID);
+        removegameEvents();
+        document.getElementById('gameover').classList.add('gameovercolor');
+        document.getElementById('gameover').style.zIndex = '2';
+        game.style.zIndex = '1';
+        document.getElementById('newgame').addEventListener('click', (e) => location.reload());
     }
 }
 
